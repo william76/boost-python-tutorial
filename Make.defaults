@@ -1,0 +1,19 @@
+CC		= gcc
+CPP     = g++
+AS		= as
+LD		= g++
+AR		= ar
+RANLIB	= ranlib
+OBJCOPY	= objcopy
+#external libraries and headers
+EXTERN_DIR ?= /opt/miserware-libs
+EXTERN_LIBDIR = $(EXTERN_DIR)/lib
+EXTERN_INCDIR = $(EXTERN_DIR)/include
+EXTERN_BINDIR = $(EXTERN_DIR)/bin
+
+BOOST_THREAD_LIB = $(EXTERN_LIBDIR)/libboost_thread.a
+BOOST_PYTHON_LIB = $(EXTERN_LIBDIR)/libboost_python.a
+
+INCDIRS = . 
+INCDIRS += $(EXTERN_INCDIR)
+INCDIR = $(foreach dir, $(INCDIRS), -I$(dir))

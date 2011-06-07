@@ -1,0 +1,2 @@
+%.o: %.cpp
+	$(CPP) $(INCDIR) $(CFLAGS) $(CPPFLAGS) -c $< -o $@ 
