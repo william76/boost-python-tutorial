@@ -1,7 +1,6 @@
 #include <iostream>
 #include <boost/python.hpp>
 #include <Python.h>
-#include "python_namespace.h"
 
 namespace py = boost::python;
 
