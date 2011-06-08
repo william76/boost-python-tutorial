@@ -1,7 +1,7 @@
 include ../Make.defaults
 include ../Make.rules
 
-HWOBJS = hello_world.o python_namespace.o
+HWOBJS = hello_world.o
 
 all: helloworld
 
