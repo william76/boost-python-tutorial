@@ -6,7 +6,8 @@ AR		= ar
 RANLIB	= ranlib
 OBJCOPY	= objcopy
 
-#external libraries and headers
+# external libraries and headers
+
 # change the next line to point to the location of your boost installation
 EXTERN_DIR ?= /path/to/boost
 EXTERN_LIBDIR = $(EXTERN_DIR)/lib
@@ -17,4 +18,7 @@ BOOST_PYTHON_LIB = $(EXTERN_LIBDIR)/libboost_python.a
 
 INCDIRS = . 
 INCDIRS += $(EXTERN_INCDIR)
+# you may also need to change this directory if you want to pin to a specific
+#   python version
+INCDIRS += /usr/include/python2.6
 INCDIR = $(foreach dir, $(INCDIRS), -I$(dir))

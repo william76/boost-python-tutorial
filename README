@@ -1,0 +1,3 @@
+This repo contains the code from my "Embedding Python in C++ Applications with boost::python" tutorial on my blog at http://thejosephturner.com.
+
+In a Linux build environment, all you should have to do is change the paths in the top-level Make.defaults file. You may also need to change the Python include directory if things don't seem to be working.
