@@ -5,13 +5,14 @@ LD		= g++
 AR		= ar
 RANLIB	= ranlib
 OBJCOPY	= objcopy
+
 #external libraries and headers
-EXTERN_DIR ?= /opt/miserware-libs
+# change the next line to point to the location of your boost installation
+EXTERN_DIR ?= /path/to/boost
 EXTERN_LIBDIR = $(EXTERN_DIR)/lib
 EXTERN_INCDIR = $(EXTERN_DIR)/include
 EXTERN_BINDIR = $(EXTERN_DIR)/bin
 
-BOOST_THREAD_LIB = $(EXTERN_LIBDIR)/libboost_thread.a
 BOOST_PYTHON_LIB = $(EXTERN_LIBDIR)/libboost_python.a
 
 INCDIRS = . 
