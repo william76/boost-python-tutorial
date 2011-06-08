@@ -1,7 +1,7 @@
 include ../Make.defaults
 include ../Make.rules
 
-HWOBJS = hello_world.o
+HWOBJS = hello_world.o python_namespace.o
 INCDIR += -I/opt/miserware-libs/Python26/include/python2.6
 
 all: helloworld
