@@ -1,24 +1,22 @@
-CC		= gcc
+CC      = gcc
 CPP     = g++
-AS		= as
-LD		= g++
-AR		= ar
-RANLIB	= ranlib
-OBJCOPY	= objcopy
+AS      = as
+LD      = g++
+AR      = ar
+RANLIB  = ranlib
+OBJCOPY = objcopy
 
-# external libraries and headers
+# set up Boost paths/libs  (expects BOOST_ROOT to be set in the environment)
+BOOST_PYTHON_LIB = ${BOOST_ROOT}/lib
+BOOST_PYTHON_INC = ${BOOST_ROOT}/include
+BOOST_LDFLAGS    = -L$(BOOST_PYTHON_LIB) -lboost_python
 
-# change the next line to point to the location of your boost installation
-EXTERN_DIR ?= /path/to/boost
-EXTERN_LIBDIR = $(EXTERN_DIR)/lib
-EXTERN_INCDIR = $(EXTERN_DIR)/include
-EXTERN_BINDIR = $(EXTERN_DIR)/bin
+# set up python paths
+PY_CFLAGS  = `python-config --cflags`
+PY_LDFLAGS = `python-config --ldflags`
 
-BOOST_PYTHON_LIB = $(EXTERN_LIBDIR)/libboost_python.a
+# set up include path flags
+INCDIRS  = .
+INCDIRS += $(BOOST_PYTHON_INC)
+INCDIR   = $(foreach dir, $(INCDIRS), -I$(dir))
 
-INCDIRS = . 
-INCDIRS += $(EXTERN_INCDIR)
-# you may also need to change this directory if you want to pin to a specific
-#   python version
-INCDIRS += /usr/include/python2.6
-INCDIR = $(foreach dir, $(INCDIRS), -I$(dir))

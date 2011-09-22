@@ -5,12 +5,12 @@ HWOBJS = hello_world.o
 
 all: helloworld
 
-helloworld: $(HWOBJS) $(BOOST_PYTHON_LIB)
-	$(LD) -o hello_world $^ $(LDFLAGS) -lpython2.6
+helloworld: $(HWOBJS)
+	$(LD) -o $@ $^ $(PY_LDFLAGS) $(LDFLAGS) $(BOOST_LDFLAGS)
 
 clean:
 	rm -rf $(HWOBJS) hello_world
 
 
 
-    
+

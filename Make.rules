@@ -1,2 +1,2 @@
 %.o: %.cpp
-	$(CPP) $(INCDIR) $(CFLAGS) $(CPPFLAGS) -c $< -o $@ 
+	$(CPP) $(INCDIR) $(PY_CFLAGS) $(CFLAGS) $(CPPFLAGS) -c $< -o $@

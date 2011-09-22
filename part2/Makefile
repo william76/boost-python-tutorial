@@ -5,12 +5,12 @@ OBJS = handle_error.o
 
 all: handle_error
 
-handle_error: $(OBJS) $(BOOST_PYTHON_LIB)
-	$(LD) -o handle_error $^ $(LDFLAGS) -lpython2.6
+handle_error: $(OBJS)
+	$(LD) -o $@ $^ $(PY_LDFLAGS) $(LDFLAGS) $(BOOST_LDFLAGS)
 
 clean:
 	rm -rf $(OBJS) handle_error
 
 
 
-    
+
